@@ -12,7 +12,7 @@ COPY ./webapp/requirements.txt /tmp/requirements.txt
 
 RUN pip3 install --index-url https://pypi.org/simple/ --upgrade pip
 # Upgrade pip
-RUN pip3 install -r /tmp/requirements.txt
+RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
 
 # Copy the application code to the container
 COPY ./webapp /opt/webapp/
