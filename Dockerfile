@@ -11,8 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python3 python3-pip
 COPY ./webapp/requirements.txt /tmp/requirements.txt
 
 # Upgrade pip
-RUN pip3 install -qr /tmp/requirements.txt
-
+RUN pip3 install --index-url https://pypi.org/simple/ --upgrade pip3
 # Copy the application code to the container
 COPY ./webapp /opt/webapp/
 
