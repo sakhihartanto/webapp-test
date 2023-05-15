@@ -10,6 +10,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python3 python3-pip
 # Copy the requirements file
 COPY ./webapp/requirements.txt /tmp/requirements.txt
 
+RUN pip3 install --index-url https://pypi.org/simple/ --upgrade pip
 # Upgrade pip
 RUN pip3 install -r /tmp/requirements.txt
 
